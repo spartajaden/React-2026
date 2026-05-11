@@ -1,11 +1,11 @@
 # 원하는 이미지 다운로드
-FROM ubuntu:alpine3.23
+FROM ubuntu:latest
 
 # 실행하다.
 RUN apt update &&\
     apt -y upgrade &&\
     apt install -y python3-pip
-    
+
 # 작업위치
 WORKDIR /app
 
