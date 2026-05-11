@@ -1,0 +1,16 @@
+#원하는 이미지 다운로드
+FROM ubuntu:latest
+
+# 실행하다.
+RUN apt update
+RUN apt -y upgrade
+RUN apt install -y python3-pip
+
+# 작업위치
+WORKDIR /app
+
+# 소스의 파일을 내부에 복사
+COPY . test.py 
+
+# 명령실행
+CMD ["python3", "test.py"]

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React CDN 방식 실습</title>
+  </head>
+  <body>
+    <!-- React가 렌더링될 루트 요소 -->
+    <div id="root"></div>
+
+    <!-- 1. React 라이브러리 CDN 로드 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- 2. JSX 변환용 Babel CDN 로드 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 3. 사용자 코드 (JSX 문법 사용 가능) -->
+    <script type="text/babel">
+      const { useState } = React;
+
+      const App = () => {
+        const [count, setCount] = useState(0);
+        const [text, setText] = useState("안녕");
+
+        return (
+          <main>
+            <h1>JSX와 useState</h1>
+            <p>버튼을 누르면 상태가 바뀐다. 화면이 다시 랜더링됩니다.</p>
+            <h2>현재 값: {count}</h2>
+            <h2>현재 값: {text}</h2>
+            <button
+                onClick={() => {
+                    if (count <= 20) setCount(count + 1); 
+                }}
+            > 
+              1 증가
+            </button>
+            <button onClick={() => setCount(count + 1)}> 1 증가 </button>
+            <button onClick={() => setCount(count - 1)}> 1 감소 </button>
+            <hr />
+            <button onClick={() => setText(text + "하세요.")}> 존대 </button>
+            <button onClick={() => setText("어라!")}> 어라 버튼 </button>
+          </main>
+        );
+      };
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<MyApp />);
+    </script>
+  </body>
+</html>
