@@ -1,8 +1,12 @@
+import React from "react";
+
 function Ex05() {
     return (
     <>
-      <h1> Home 페이지 입니다.</h1>  
-      <h2> React 예제를 준비하였습니다.</h2>  
+    <div style={{ padding: "20px", border: "1px soild #ccc"}}>
+      <h2>예제5 (Placeholder)</h2>  
+      <p>여기에 Ex05의 내용이 들어갑니다.</p>  
+    </div>
     </>
     );
 }
