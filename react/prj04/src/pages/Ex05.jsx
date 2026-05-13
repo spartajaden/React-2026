@@ -1,14 +1,23 @@
-import React from "react";
+import { useState } from "react";
 
 function Ex05() {
-    return (
-    <>
-    <div style={{ padding: "20px", border: "1px soild #ccc"}}>
-      <h2>예제5 (Placeholder)</h2>  
-      <p>여기에 Ex05의 내용이 들어갑니다.</p>  
+  const [sel, setSel] = useState("051");
+  const handleSel = (e) => setSel(e.target.value);
+
+  const city = ["서울", "부산", "광주", "대구", "대전", "제주"];
+  const cnum = ["02", "051", "062", "053", "042", "064"];
+
+  return (
+    <div style={{ padding: "20px", border: "1px soild #ccc" }}>
+      <h1>예제5 셀렉터와 연동</h1>
+      <h2>{sel}</h2>
+      <select onChange={handleSel} value={sel}>
+        {city.map((v, i) => {
+          return <option key = {i} value={cnum[i]}>{v}</option>;
+        })}
+      </select>
     </div>
-    </>
-    );
+  );
 }
 
 export default Ex05;

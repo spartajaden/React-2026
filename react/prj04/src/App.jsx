@@ -21,7 +21,7 @@ function App() {
       <Link to="/ex04">예제4</Link> | <Link to="/ex05">예제5</Link> |{" "}
       <Link to="/ex06">예제6</Link> | <Link to="/ex07">예제7</Link> |{" "}
       <Link to="/ex08">예제8</Link> | <Link to="/ex09">예제9</Link> |{" "}
-      <Link to="/ex10">예제10</Link> |{" "}
+      <Link to="/ex10">예제10</Link> |
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/ex01" element={<Ex01 />}></Route>

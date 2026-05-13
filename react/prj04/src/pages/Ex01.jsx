@@ -62,3 +62,5 @@ function Ex01() {
     </>
   );
 }
+
+export default Ex01;

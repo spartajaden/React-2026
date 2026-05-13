@@ -1,37 +1,3 @@
-// // 예제
-// import { useState } from "react";
-// import list from "./ex06_sample";
-
-// function Ex06() {
-//   const [info, setInfo] = useState("원하는 도구를 고르세요.");
-//   const handleInfo = (e) => setInfo(e.target.value); //setInfo();
-//   const obj = {};
-//   list.forEach((v, i) => {
-//     obj[v] = true
-    
-//   });
-//   console.log(obj);
-//   return (
-//     <div style={{ padding: "20px", border: "1px soild #ccc" }}>
-//       <h1>6. 라디오 버튼</h1>
-//       <h2>{info}</h2>
-//       {list.map((v, i) => {
-//         return (
-//           <div key={i}>
-//             <input type="radio" name="one" value={v} onChange={handleInfo} />
-//             {v}
-//             <br />
-//           </div>
-//         );
-//       })}
-//       <h3>{JSON.stringify(obj)}</h3>
-//     </div>
-//   );
-// }
-
-// export default Ex06;
-
-
 // 응용_모든 값을 false로 초기화한 뒤 클릭한 키만 true로 만드는 객체를 새로 생성하여 상태를 업데이트 할 때(ex. 라디오 버튼)
 import { useState } from "react";
 import list from "./ex06_sample";
@@ -56,7 +22,7 @@ function Ex06() {
     });
 
     setInfoObj(updatedObj); // 상태 업데이트
-    setSelectedText(selectedValue);
+    setSelectedText(selectedValue); // 화면에 보여지는 텍스트(제목)를 사용자가 방금 클릭한 값으로 업데이트
 
     // 콘솔 확인
     console.log(updatedObj);
