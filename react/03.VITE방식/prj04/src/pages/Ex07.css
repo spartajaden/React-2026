@@ -1,0 +1,127 @@
+/* Ex07 - 체크박스 다중 선택 스타일 */
+
+.ex07-container {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 32px 28px;
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.ex07-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* 선택 결과 영역 */
+.ex07-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: #eef2ff;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.ex07-result-label {
+  font-weight: 600;
+  color: #4338ca;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.ex07-result-value {
+  color: #1e293b;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* 체크박스 목록 */
+.ex07-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+/* 각 항목 (label) */
+.ex07-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ex07-item:hover {
+  border-color: #818cf8;
+  background: #f8f9ff;
+}
+
+.ex07-item.checked {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+/* 실제 체크박스 input (숨김 처리하고 커스텀 스타일 적용) */
+.ex07-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #6366f1;
+  cursor: pointer;
+}
+
+/* 항목 텍스트 */
+.ex07-item-text {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.ex07-item.checked .ex07-item-text {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+/* 체크 표시 이모지 */
+.ex07-checkmark {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* JSON 데이터 표시 */
+.ex07-json {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 18px;
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+.ex07-json-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ex07-json code {
+  font-size: 0.85rem;
+  color: #a5b4fc;
+  word-break: break-word;
+  line-height: 1.5;
+}
