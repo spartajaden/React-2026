@@ -1,0 +1,64 @@
+version: "3.8"
+
+# 개발용 Docker Compose 설정
+# docker-compose -f docker-compose.dev.yml up
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: crud_mysql_dev
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: crud_db
+      MYSQL_CHARSET: utf8mb4
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data_dev:/var/lib/mysql
+    networks:
+      - crud_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: crud_backend_dev
+    ports:
+      - "5000:5000"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DB: crud_db
+      FLASK_ENV: development
+      FLASK_DEBUG: 1
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mysql
+    networks:
+      - crud_network
+    command: flask run --host=0.0.0.0
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: crud_frontend_dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/index.html:/app/index.html
+      - /app/node_modules
+    networks:
+      - crud_network
+    command: npm run dev
+
+volumes:
+  mysql_data_dev:
+    driver: local
+
+networks:
+  crud_network:
+    driver: bridge

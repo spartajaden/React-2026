@@ -1,0 +1,12 @@
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(190, 224, 37);
+    color: red;
+}
+.box1-new {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(190, 224, 37);
+    color: rgb(77, 145, 172);
+}
